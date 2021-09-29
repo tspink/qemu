@@ -50,6 +50,7 @@
 #include "target_elf.h"
 #include "cpu_loop-common.h"
 #include "crypto/init.h"
+#include "native-lib.h"
 #include "fd-trans.h"
 #include "signal-common.h"
 #include "loader.h"
@@ -637,6 +638,7 @@ int main(int argc, char **argv, char **envp)
     module_call_init(MODULE_INIT_TRACE);
     qemu_init_cpu_list();
     module_call_init(MODULE_INIT_QOM);
+    nlib_init();
 
     envlist = envlist_create();
 
